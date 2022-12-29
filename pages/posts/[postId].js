@@ -9,18 +9,17 @@ export const getStaticProps = async (contex) => {
 };
 
 export const getStaticPaths = async () => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  const data = await res.json();
+
+  const paths = data.map((post) => {
+    return {
+      params: { postId: `${post.id}` },
+    };
+  });
+
   return {
-    paths: [
-      {
-        params: { postId: "1" },
-      },
-      {
-        params: { postId: "2" },
-      },
-      {
-        params: { postId: "3" },
-      },
-    ],
+    paths: paths,
     fallback: false,
   };
 };
