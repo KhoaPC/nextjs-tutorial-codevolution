@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 export const getStaticProps = async (contex) => {
   const { params } = contex;
   const res = await fetch(
@@ -20,11 +22,20 @@ export const getStaticPaths = async () => {
 
   return {
     paths: paths,
-    fallback: false,
+    fallback: true,
+    // Nếu đường dẫn truy cập không được trả về thì chuyển đến trang dự phòng
+    // fallback: false,
   };
 };
 
 function Post({ post }) {
+  const router = useRouter();
+
+  // Trang dự phòng
+  if (router.isFallback) {
+    return <h1>Loading.......</h1>;
+  }
+
   return (
     <>
       <h2>
