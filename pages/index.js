@@ -1,9 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const router = useRouter();
+
+  const handlerClick = () => {
+    router.push("/user");
+  };
+
   return (
     <>
       <Head>
@@ -12,14 +19,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <button onClick={handlerClick}>Hello</button>
       <ul>
-        <Link href='/user'>
+        <Link href="/user">
           <h2>User</h2>
-        </Link >
-        <Link href='/blog'>
+        </Link>
+        <Link href="/blog">
           <h2>Blog</h2>
         </Link>
-        <Link href='/doc'>
+        <Link href="/docs">
           <h2>Docs</h2>
         </Link>
       </ul>
