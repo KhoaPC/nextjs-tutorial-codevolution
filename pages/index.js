@@ -21,14 +21,8 @@ export default function Home() {
       </Head>
       <button onClick={handlerClick}>Hello</button>
       <ul>
-        <Link href="/user">
-          <h2>User</h2>
-        </Link>
-        <Link href="/blog">
-          <h2>Blog</h2>
-        </Link>
-        <Link href="/docs">
-          <h2>Docs</h2>
+        <Link href="/products">
+          <h2>Products</h2>
         </Link>
       </ul>
     </>

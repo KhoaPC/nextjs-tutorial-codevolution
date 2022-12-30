@@ -31,10 +31,10 @@ export const getStaticPaths = async () => {
 function Post({ post }) {
   const router = useRouter();
 
-  // Trang dự phòng
-  if (router.isFallback) {
-    return <h1>Loading.......</h1>;
-  }
+  // // Trang dự phòng
+  // if (router.isFallback) {
+  //   return <h1>Loading.......</h1>;
+  // }
 
   return (
     <>
