@@ -1,7 +1,95 @@
 {
+  "dashboard": {
+    "posts": 5,
+    "likes": 600,
+    "followers": 50,
+    "followings": 10
+  },
   "products": [
-    { "id": 1, "name": "Screen", "price": "3000$" },
-    { "id": 2, "name": "Mouse", "price": "200$" },
-    { "id": 3, "name": "Keyboard", "price": "1000$" }
+    {
+      "id": 1,
+      "name": "Screen",
+      "price": "3000$"
+    },
+    {
+      "id": 2,
+      "name": "Mouse",
+      "price": "200$"
+    },
+    {
+      "id": 3,
+      "name": "Keyboard",
+      "price": "1000$"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "category": "sports",
+      "title": "Event #1",
+      "description": "Description Football",
+      "date": "December 10"
+    },
+    {
+      "id": 2,
+      "category": "sports",
+      "title": "Event #2",
+      "description": "Description Swim",
+      "date": "December 14"
+    },
+    {
+      "id": 3,
+      "category": "showbiz",
+      "title": "Event #3",
+      "description": "Description Showbiz",
+      "date": "December 20"
+    },
+    {
+      "id": 4,
+      "category": "showbiz",
+      "title": "Event #4",
+      "description": "Description Showbiz",
+      "date": "December 26"
+    },
+    {
+      "id": 5,
+      "category": "technology",
+      "title": "Event #5",
+      "description": "Description Technology",
+      "date": "December 29"
+    },
+    {
+      "id": 6,
+      "category": "technology",
+      "title": "Event #6",
+      "description": "Description Technology",
+      "date": "December 30"
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "category": "sports",
+      "title": "Newpaper #1",
+      "body": "Football Football Football Football"
+    },
+    {
+      "id": 2,
+      "category": "sports",
+      "title": "Newpaper #1",
+      "body": "Swim Swim Swim Swim"
+    },
+    {
+      "id": 3,
+      "category": "showbiz",
+      "title": "Newpaper #2",
+      "body": "Showbiz Showbiz Showbiz Showbiz"
+    },
+    {
+      "id": 4,
+      "category": "technology",
+      "title": "Newpaper #3",
+      "body": "Technology Technology Technology Technology"
+    }
   ]
 }
