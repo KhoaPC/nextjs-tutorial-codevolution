@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function CommentsPage() {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
+
+  useEffect(() => {
+    fetchComments();
+  }, []);
+
   const fetchComments = async () => {
     const response = await fetch("/api/comments");
     const data = await response.json();
@@ -10,24 +15,25 @@ function CommentsPage() {
   };
 
   const submitComment = async () => {
-    const response = await fetch("/api/comments", {
-      method: "POST",
-      body: JSON.stringify({ comment }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-    console.log(data);
+    try {
+      const response = await fetch("/api/comments", {
+        method: "POST",
+        body: JSON.stringify({ comment }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      await fetchComments();
+    } catch {}
   };
 
   const deleteComment = async (commentId) => {
     const response = await fetch(`/api/comments/${commentId}`, {
       method: "DELETE",
     });
-    const data = await response.json();
-    console.log(data);
-    fetchComments();
+
+    await fetchComments();
   };
 
   return (
@@ -41,7 +47,6 @@ function CommentsPage() {
         <button onClick={submitComment}>Submit comment</button>
       </div>
       <hr />
-      <button onClick={fetchComments}>Load comments</button>
       {comments.map((comment) => {
         return (
           <div key={comment.id}>
